@@ -20,6 +20,8 @@ body {
 
 /* Header and Navigation */
 .header {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -105,6 +107,18 @@ body {
     margin-bottom: 2rem;
     opacity: 0.9;
     animation: fadeInUp 1s ease 0.2s both;
+}
+
+.exclusive-event {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease 0.3s both;
 }
 
 .cta-button {
@@ -306,17 +320,23 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
-        display: block;
+        display: block !important;
         cursor: pointer;
+        position: relative;
+        z-index: 1001;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
     }
     
     .hamburger .bar {
         display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
+        width: 30px;
+        height: 4px;
+        margin: 6px auto;
         transition: all 0.3s ease-in-out;
         background-color: white;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
     
     .nav-menu {
@@ -367,6 +387,11 @@ body {
         font-size: 1rem;
     }
     
+    .exclusive-event {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
     .events-section h2,
     .sponsors-section h2,
     .contact-section h2 {
@@ -398,6 +423,10 @@ body {
     .sponsor-image {
         width: 150px;
         height: 100px;
+    }
+    
+    .hamburger {
+        display: block !important;
     }
 }
 
@@ -701,4 +730,11 @@ body {
 /* Hamburger Menu */
 .hamburger {
     display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    min-width: 44px;
+    min-height: 44px;
 } 
